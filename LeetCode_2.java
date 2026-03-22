@@ -1,30 +1,33 @@
-public class ListCode_2 {
-    int val;
-    ListCode_2 next;
 
-    ListCode_2() {
+
+
+public class LeetCode_2 {
+    int val;
+    LeetCode_2 next;
+
+    LeetCode_2() {
     }
 
-    ListCode_2(int val) {
+    LeetCode_2(int val) {
         this.val = val;
     }
 
-    ListCode_2(int val, ListCode_2 next) {
+    LeetCode_2(int val, LeetCode_2 next) {
         this.val = val;
         this.next = next;
     }
 }
 
 class Solution {
-    public ListCode_2 addTwoNumbers(ListCode_2 l1, ListCode_2 l2) {
-        ListCode_2 head = null;
-        ListCode_2 tail = null;
+    public LeetCode_2 addTwoNumbers(LeetCode_2 l1, LeetCode_2 l2) {
+        LeetCode_2 head = null;
+        LeetCode_2 tail = null;
         int carry = 0;
         while (l1 != null || l2 != null || carry != 0) {
             int val1 = (l1 == null) ? 0 : l1.val;
             int val2 = (l2 == null) ? 0 : l2.val;
             int ans = val1 + val2 + carry;
-            ListCode_2 newNode = new ListCode_2(ans % 10);
+            LeetCode_2 newNode = new LeetCode_2(ans % 10);
             ;
             carry = ans / 10;
             if (head == null) {
