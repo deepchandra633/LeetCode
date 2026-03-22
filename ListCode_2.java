@@ -1,30 +1,30 @@
-public class ListNode {
+public class ListCode_2 {
     int val;
-    ListNode next;
+    ListCode_2 next;
 
-    ListNode() {
+    ListCode_2() {
     }
 
-    ListNode(int val) {
+    ListCode_2(int val) {
         this.val = val;
     }
 
-    ListNode(int val, ListNode next) {
+    ListCode_2(int val, ListCode_2 next) {
         this.val = val;
         this.next = next;
     }
 }
 
 class Solution {
-    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        ListNode head = null;
-        ListNode tail = null;
+    public ListCode_2 addTwoNumbers(ListCode_2 l1, ListCode_2 l2) {
+        ListCode_2 head = null;
+        ListCode_2 tail = null;
         int carry = 0;
         while (l1 != null || l2 != null || carry != 0) {
             int val1 = (l1 == null) ? 0 : l1.val;
             int val2 = (l2 == null) ? 0 : l2.val;
             int ans = val1 + val2 + carry;
-            ListNode newNode = new ListNode(ans % 10);
+            ListCode_2 newNode = new ListCode_2(ans % 10);
             ;
             carry = ans / 10;
             if (head == null) {
