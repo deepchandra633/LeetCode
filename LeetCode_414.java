@@ -2,7 +2,7 @@ import java.util.*;
 class Solution {
     public int thirdMax(int[] nums) {
        HashSet<Integer>hs=new HashSet <>();
-       int n=nums.length;
+       
        for(int i : nums){
         hs.add(i);
        }
