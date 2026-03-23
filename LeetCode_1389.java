@@ -1,0 +1,16 @@
+import java.util.*;
+class Solution {
+    public int[] createTargetArray(int[] nums, int[] index) {
+        List<Integer> list=new ArrayList<>();
+        for(int i=0;i<nums.length;i++){
+            list.add(index[i],nums[i]);  // index array ke index per nums array ki value daldo
+
+        }
+
+        for(int i=0;i<nums.length;i++){
+            nums[i]=list.get(i);
+
+        }
+        return nums;
+    }
+}
