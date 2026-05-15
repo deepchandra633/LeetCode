@@ -1,30 +1,26 @@
 class Solution {
-    public int[] findErrorNums(int[] arr) {
-        
-       int i=0;
+    public int firstMissingPositive(int[] arr) {
+          int i=0;
     
         while(i<arr.length){
             int value=arr[i]-1;
-            if( arr[i] != arr[value]){
+            if(arr[i]>0 && arr[i]<arr.length && arr[i] != arr[value]){
                 swap(arr,i,value);
             }else{
                 i++;
             }
         }
         // search missing number
-        
         for(int index=0;index<arr.length;index++){
             if(arr[index] != index+1){
-                return new int[]{arr[index],index+1};
+                return index+1;
             }
         }
-        return new int[]{-1,-1};
-        
+        return arr.length+1;
     }
-
-    static void swap(int[] arr, int first, int second) {
-        int temp = arr[first];
-        arr[first] = arr[second];
-        arr[second] = temp;
+    static void swap(int[] arr,int first,int second){
+        int temp=arr[first];
+        arr[first]=arr[second];
+        arr[second]=temp;
     }
 }
